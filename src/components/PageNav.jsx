@@ -1,19 +1,24 @@
 import { NavLink } from "react-router-dom";
 import styles from "./PageNav.module.css";
+import Logo from "./Logo";
 
 function PageNav() {
   return (
-    <nav className="{styles.nav}">
-        <ul>
-             <NavLink to="/"></NavLink>
-              <NavLink to="/PageNotFound">Pagenotfpond</NavLink>
-           <br></br>
-              <NavLink to="/pricing">price</NavLink>
-              <br></br>
-              <NavLink to="/product">product</NavLink>
-            
-        </ul>
+    <nav className={styles.nav}> {/*the reason why it is imported like this beause random numbers are generated at the end of the class imported from the css*/}
+      <Logo/>
+      
+      <ul>
+        <li>
+          <NavLink to="/pricing">pricing</NavLink>
+        </li>
+        <li>
+          <NavLink to="/product">Product</NavLink>
+        </li>
+        <li>
+          <NavLink to="/login" className={styles.ctaLink}>Login</NavLink>
+        </li>
+      </ul>
     </nav>
-  )
+  );
 }
 export default PageNav;
